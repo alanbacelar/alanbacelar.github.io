@@ -1,0 +1,62 @@
+$bgColor: #FF4444;
+$baseColor: #fff;
+$linkColor: #fff;
+$linkColorHover: #eaeaea;
+$linkColorVisited: #dadada;
+
+body {
+	background: $bgColor;
+	color: $baseColor;
+
+	a {
+		color: $linkColor;
+	}
+
+	a:visited {
+		color: $linkColorVisited;
+	}
+
+	a:hover {
+		color: $linkColorHover;
+		text-decoration: none;
+	}
+}
+
+.main {
+	width: 250px;
+	height: 200px;
+	margin: -100px 0 0 -125px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+}
+
+header h1.logo {
+	width: 162px;
+	height: 160px;
+	margin: auto;
+	position: relative;
+	background: url(../img/logo.png) no-repeat;
+	text-indent: -199999999999px;
+}
+
+nav {
+	ul {
+		position: relative;
+		margin: 40px 0 0 0;
+		padding: 0;	
+
+		li {
+			list-style: none;
+			display: inline;
+			width: 50px;
+			padding: 10px;
+		}
+	}
+}
+
+footer {
+	margin: 40px 0 0 0;
+	position: relative;
+	text-align: center;
+}
