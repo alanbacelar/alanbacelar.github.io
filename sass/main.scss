@@ -1,12 +1,44 @@
-$bgColor: #FF4444;
-$baseColor: #fff;
-$linkColor: #fff;
-$linkColorHover: #eaeaea;
-$linkColorVisited: #dadada;
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700);
+
+$bgColor: #F2F2F2;
+$baseColor: #3a3f48;
+
+$linkBg: #FFF;
+$linkColor: #f11a1f;
+$linkColorHover: #FF4D4D;
+$linkColorVisited: $linkColor;
+
+@mixin transition($time) {
+  -webkit-transition: all $time ease-in-out;
+    -moz-transition: all $time ease-in-out;
+    -ms-transition: all $time ease-in-out;
+    -o-transition: all $time ease-in-out;
+
+	transition: all $time ease-in-out;
+}
+
+* { margin: 0; padding: 0; }  
+
+h1 { 
+	font-family: 'Montserrat', 'sans-serif';
+	font-size: 6.6em;
+	line-height: 0.8em;
+	text-transform: uppercase;
+} 
+
+p {
+	font-size: 1.9em;
+	margin: 0.4em 0;
+	color: lighten( $baseColor, 30% );
+}
 
 body {
-	background: $bgColor;
+	background-color: $bgColor;
+	border-top: 3px solid $baseColor;
 	color: $baseColor;
+	font-size: 62.5%;
+	padding-bottom: 65px;
+	font-family: 'Georgia';
 
 	a {
 		color: $linkColor;
@@ -23,40 +55,149 @@ body {
 }
 
 .main {
-	width: 250px;
-	height: 200px;
-	margin: -100px 0 0 -125px;
-	position: absolute;
-	top: 40%;
-	left: 50%;
+	margin: 10% auto auto auto;
+	padding: 10px;
+    min-width: 100px;
+    text-align: center;
+    margin-bottom: 10px;
+    overflow-y: auto;
 }
 
-header h1.logo {
-	width: 162px;
-	height: 160px;
-	margin: auto;
-	position: relative;
-	background: url(../img/logo.png) no-repeat;
-	text-indent: -199999999999px;
+header {
+	width: auto;
+
+	p {
+		font-style: italic;
+		font-weight: 300;
+	}
 }
 
 nav {
+	width: 700px;
+	margin: 30px auto;
+
 	ul {
-		position: relative;
-		margin: 40px 0 0 0;
-		padding: 0;	
+		margin: auto;
+		padding: 0;
 
 		li {
 			list-style: none;
-			display: inline;
-			width: 50px;
-			padding: 10px;
+			margin: 3px;
+			float: left;
+
+			a {
+				color: $linkColor;
+				min-width: 50px;
+				padding: 8px;
+				display: block;
+				background-color: $linkBg;
+
+				@include transition(0.8s);
+			}
+
+			a:hover {
+				background-color: $linkColor;
+				color: $linkBg;
+
+				@include transition(0.8s);
+			}
+
 		}
+
 	}
 }
 
 footer {
-	margin: 40px 0 0 0;
-	position: relative;
+	position: fixed;
+	bottom: 0;
+	padding-bottom: 10px;
 	text-align: center;
+	width: 100%;
+	padding: 20px 0;
+	background-color: $bgColor;
+
+	.made {
+		width: 250px;
+		margin: auto;
+	}
+
+	.made:hover > .by {
+		opacity: 1;
+		@include transition(0.8s);
+	}
+
+	.made:hover > img.logo {
+		opacity: 0.6;
+		@include transition(0.8s);
+	}
+
+	img.logo {
+		cursor: pointer;
+		@include transition(0.8s);
+	}
+
+	.by {
+		background-color: #fff;
+		width: 250px;
+		margin: auto;
+		padding: 8px;
+		border-radius: 50px;
+		border-bottom: 2px solid $linkColor;
+		margin-bottom: 10px;
+		font-size: 1em;
+		opacity: 0;
+
+		@include transition(0.8s);
+	}
+
+	.by:after,
+	.by::after {
+	    border-top: solid 150px $linkColor;
+	    border-left: solid 100px transparent;
+	    border-right: solid 100px transparent;
+	  	border-width: 8px;
+	  	position: absolute;
+	  	top: 45%;
+	  	margin-left: -120px;
+	  	content: "";
+	}
 }
+
+.only-sm {
+	display: none;
+}
+
+
+@media only screen and (max-width: 700px) {  
+    h1 { 
+    	font-size: 4.5em;
+    }
+
+    p {
+    	font-size: 1.5em;
+    }
+
+    nav {
+    	width: auto;
+
+    	ul {
+			li {
+				width: 100%;
+			}
+    	}
+    }
+
+    footer .by {
+    	display: inline;
+    }
+
+    .only-sm {
+		display: block;
+	}
+} 
+
+@media only screen and (max-width: 320px) {  
+    h1 { 
+    	font-size: 3.5em;
+    }
+} 

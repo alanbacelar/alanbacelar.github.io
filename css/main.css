@@ -1,41 +1,156 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700);
+* {
+  margin: 0;
+  padding: 0; }
+
+h1 {
+  font-family: 'Montserrat', 'sans-serif';
+  font-size: 6.6em;
+  line-height: 0.8em;
+  text-transform: uppercase; }
+
+p {
+  font-size: 1.9em;
+  margin: 0.4em 0;
+  color: #818a9a; }
+
 body {
-  background: #ff4444;
-  color: white; }
+  background-color: #f2f2f2;
+  border-top: 3px solid #3a3f48;
+  color: #3a3f48;
+  font-size: 62.5%;
+  padding-bottom: 65px;
+  font-family: 'Georgia'; }
   body a {
-    color: white; }
+    color: #f11a1f; }
   body a:visited {
-    color: #dadada; }
+    color: #f11a1f; }
   body a:hover {
-    color: #eaeaea;
+    color: #ff4d4d;
     text-decoration: none; }
 
 .main {
-  width: 250px;
-  height: 200px;
-  margin: -100px 0 0 -125px;
-  position: absolute;
-  top: 40%;
-  left: 50%; }
+  margin: 10% auto auto auto;
+  padding: 10px;
+  min-width: 100px;
+  text-align: center;
+  margin-bottom: 10px;
+  overflow-y: auto; }
 
-header h1.logo {
-  width: 162px;
-  height: 160px;
-  margin: auto;
-  position: relative;
-  background: url(../img/logo.png) no-repeat;
-  text-indent: -199999999999px; }
+header {
+  width: auto; }
+  header p {
+    font-style: italic;
+    font-weight: 300; }
 
-nav ul {
-  position: relative;
-  margin: 40px 0 0 0;
-  padding: 0; }
-  nav ul li {
-    list-style: none;
-    display: inline;
-    width: 50px;
-    padding: 10px; }
+nav {
+  width: 700px;
+  margin: 30px auto; }
+  nav ul {
+    margin: auto;
+    padding: 0; }
+    nav ul li {
+      list-style: none;
+      margin: 3px;
+      float: left; }
+      nav ul li a {
+        color: #f11a1f;
+        min-width: 50px;
+        padding: 8px;
+        display: block;
+        background-color: white;
+        -webkit-transition: all 0.8s ease-in-out;
+        -moz-transition: all 0.8s ease-in-out;
+        -ms-transition: all 0.8s ease-in-out;
+        -o-transition: all 0.8s ease-in-out;
+        transition: all 0.8s ease-in-out; }
+      nav ul li a:hover {
+        background-color: #f11a1f;
+        color: white;
+        -webkit-transition: all 0.8s ease-in-out;
+        -moz-transition: all 0.8s ease-in-out;
+        -ms-transition: all 0.8s ease-in-out;
+        -o-transition: all 0.8s ease-in-out;
+        transition: all 0.8s ease-in-out; }
 
 footer {
-  margin: 40px 0 0 0;
-  position: relative;
-  text-align: center; }
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 10px;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #f2f2f2; }
+  footer .made {
+    width: 250px;
+    margin: auto; }
+  footer .made:hover > .by {
+    opacity: 1;
+    -webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    -ms-transition: all 0.8s ease-in-out;
+    -o-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out; }
+  footer .made:hover > img.logo {
+    opacity: 0.6;
+    -webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    -ms-transition: all 0.8s ease-in-out;
+    -o-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out; }
+  footer img.logo {
+    cursor: pointer;
+    -webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    -ms-transition: all 0.8s ease-in-out;
+    -o-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out; }
+  footer .by {
+    background-color: #fff;
+    width: 250px;
+    margin: auto;
+    padding: 8px;
+    border-radius: 50px;
+    border-bottom: 2px solid #f11a1f;
+    margin-bottom: 10px;
+    font-size: 1em;
+    opacity: 0;
+    -webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    -ms-transition: all 0.8s ease-in-out;
+    -o-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out; }
+  footer .by:after,
+  footer .by::after {
+    border-top: solid 150px #f11a1f;
+    border-left: solid 100px transparent;
+    border-right: solid 100px transparent;
+    border-width: 8px;
+    position: absolute;
+    top: 45%;
+    margin-left: -120px;
+    content: ""; }
+
+.only-sm {
+  display: none; }
+
+@media only screen and (max-width: 700px) {
+  h1 {
+    font-size: 4.5em; }
+
+  p {
+    font-size: 1.5em; }
+
+  nav {
+    width: auto; }
+    nav ul li {
+      width: 100%; }
+
+  footer .by {
+    display: inline; }
+
+  .only-sm {
+    display: block; } }
+@media only screen and (max-width: 320px) {
+  h1 {
+    font-size: 3.5em; } }
